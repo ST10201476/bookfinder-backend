@@ -17,7 +17,8 @@ reading list.
 
 ## Backend
 The companion backend lives here:
-https://github.com/[ST10201476s]/bookfinder-backend
+https://github.com/ST10201476/bookfinder-backend
+
 and is deployed at:
 https://bookfinder-backend-production-a2a4.up.railway.app
 
