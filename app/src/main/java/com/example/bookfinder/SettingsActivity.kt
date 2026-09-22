@@ -8,6 +8,7 @@ import android.widget.Switch
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate
+import androidx.core.os.LocaleListCompat
 import com.google.firebase.auth.FirebaseAuth
 
 class SettingsActivity : AppCompatActivity() {
@@ -18,6 +19,9 @@ class SettingsActivity : AppCompatActivity() {
     private lateinit var accountEmailText: TextView
     private lateinit var darkModeSwitch: Switch
     private lateinit var logoutButton: Button
+    private lateinit var btnLanguageEnglish: Button      // ← NEW
+    private lateinit var btnLanguageAfrikaans: Button    // ← NEW
+    private lateinit var btnLanguageZulu: Button         // ← NEW
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -29,8 +33,11 @@ class SettingsActivity : AppCompatActivity() {
         accountEmailText = findViewById(R.id.accountEmailText)
         darkModeSwitch = findViewById(R.id.darkModeSwitch)
         logoutButton = findViewById(R.id.logoutButton)
+        btnLanguageEnglish = findViewById(R.id.btnLanguageEnglish)      // ← NEW
+        btnLanguageAfrikaans = findViewById(R.id.btnLanguageAfrikaans)  // ← NEW
+        btnLanguageZulu = findViewById(R.id.btnLanguageZulu)            // ← NEW
 
-        accountEmailText.text = "Logged in as: ${auth.currentUser?.email ?: "Unknown"}"
+        accountEmailText.text = getString(R.string.account_info) + ": ${auth.currentUser?.email ?: "Unknown"}"
 
         val isDarkMode = prefs.getBoolean("dark_mode", false)
         darkModeSwitch.isChecked = isDarkMode
@@ -44,6 +51,11 @@ class SettingsActivity : AppCompatActivity() {
             )
         }
 
+        // ← NEW: language buttons
+        btnLanguageEnglish.setOnClickListener { setLanguage("en") }
+        btnLanguageAfrikaans.setOnClickListener { setLanguage("af") }
+        btnLanguageZulu.setOnClickListener { setLanguage("zu") }
+
         logoutButton.setOnClickListener {
             auth.signOut()
             val intent = Intent(this, LoginActivity::class.java)
@@ -51,5 +63,11 @@ class SettingsActivity : AppCompatActivity() {
             startActivity(intent)
             finish()
         }
+    }
+
+    // ← NEW: language-switching function
+    private fun setLanguage(langCode: String) {
+        val localeList = LocaleListCompat.forLanguageTags(langCode)
+        AppCompatDelegate.setApplicationLocales(localeList)
     }
 }

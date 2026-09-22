@@ -9,7 +9,7 @@
         android:id="@+id/settingsTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Settings"
+        android:text="@string/settings_title"
         android:textSize="24sp"
         android:textStyle="bold"
         android:layout_marginBottom="24dp" />
@@ -32,7 +32,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Dark Mode"
+            android:text="@string/dark_mode"
             android:textSize="16sp" />
 
         <Switch
@@ -43,9 +43,27 @@
     </LinearLayout>
 
     <Button
+        android:id="@+id/btnLanguageEnglish"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/language_english" />
+
+    <Button
+        android:id="@+id/btnLanguageAfrikaans"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/language_afrikaans" />
+
+    <Button
+        android:id="@+id/btnLanguageZulu"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/language_zulu" />
+
+    <Button
         android:id="@+id/logoutButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Log Out" />
+        android:text="@string/log_out" />
 
 </LinearLayout>

@@ -1,0 +1,36 @@
+<resources>
+    <string name="app_name">BookFinder</string>
+    <string name="login_title">Teken in</string>
+    <string name="register_title">Registreer</string>
+    <string name="email_hint">E-pos</string>
+    <string name="password_hint">Wagwoord</string>
+    <string name="login_button">Teken in</string>
+    <string name="register_button">Registreer</string>
+    <string name="search_hint">Soek boeke…</string>
+    <string name="search_button">Soek</string>
+    <string name="save_book">Stoor Boek</string>
+    <string name="publisher_label">Uitgewer: %1$s</string>
+    <string name="published_label">Gepubliseer: %1$s</string>
+    <string name="pages_label">Bladsye: %1$s</string>
+    <string name="rating_label">Gradering: %1$s</string>
+    <string name="unknown_title">Onbekende titel</string>
+    <string name="unknown_author">Onbekende outeur</string>
+    <string name="unknown_publisher">Onbekende uitgewer</string>
+    <string name="unknown_date">Onbekende datum</string>
+    <string name="unknown_pages">Onbekend</string>
+    <string name="rating_unavailable">Nie beskikbaar nie</string>
+    <string name="no_description">Geen beskrywing beskikbaar nie.</string>
+    <string name="book_saved">Boek gestoor in jou lys!</string>
+    <string name="save_failed">Kon nie boek stoor nie</string>
+    <string name="must_be_logged_in">Jy moet ingeteken wees om boeke te stoor</string>
+    <string name="could_not_identify_book">Kon nie hierdie boek identifiseer nie</string>
+    <string name="settings_title">Instellings</string>
+    <string name="dark_mode">Donker modus</string>
+    <string name="language">Taal</string>
+    <string name="logout">Teken uit</string>
+    <string name="account_info">Rekeninginligting</string>
+    <string name="language_english">Engels</string>
+    <string name="language_afrikaans">Afrikaans</string>
+    <string name="language_zulu">isiZulu</string>
+
+</resources>

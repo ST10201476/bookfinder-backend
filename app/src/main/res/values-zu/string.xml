@@ -1,0 +1,36 @@
+<resources>
+    <string name="app_name">BookFinder</string>
+    <string name="login_title">Ngena</string>
+    <string name="register_title">Bhalisa</string>
+    <string name="email_hint">I-imeyili</string>
+    <string name="password_hint">Iphasiwedi</string>
+    <string name="login_button">Ngena</string>
+    <string name="register_button">Bhalisa</string>
+    <string name="search_hint">Sesha izincwadi…</string>
+    <string name="search_button">Sesha</string>
+    <string name="save_book">Gcina Incwadi</string>
+    <string name="publisher_label">Umshicileli: %1$s</string>
+    <string name="published_label">Kushicilelwe: %1$s</string>
+    <string name="pages_label">Amakhasi: %1$s</string>
+    <string name="rating_label">Isilinganiso: %1$s</string>
+    <string name="unknown_title">Isihloko esingaziwa</string>
+    <string name="unknown_author">Umbhali ongaziwa</string>
+    <string name="unknown_publisher">Umshicileli ongaziwa</string>
+    <string name="unknown_date">Usuku olungaziwa</string>
+    <string name="unknown_pages">Akwaziwa</string>
+    <string name="rating_unavailable">Ayitholakali</string>
+    <string name="no_description">Anekho incazelo etholakalayo.</string>
+    <string name="book_saved">Incwadi igciniwe ohlwini lwakho!</string>
+    <string name="save_failed">Yehlulekile ukugcina incwadi</string>
+    <string name="must_be_logged_in">Kufanele ungene ngaphambi kokugcina izincwadi</string>
+    <string name="could_not_identify_book">Ayikwazanga ukumaza le ncwadi</string>
+    <string name="settings_title">Izilungiselelo</string>
+    <string name="dark_mode">Imodi emnyama</string>
+    <string name="language">Ulimi</string>
+    <string name="logout">Phuma</string>
+    <string name="account_info">Imininingwane ye-akhawunti</string>
+    <string name="language_english">isiNgisi</string>
+    <string name="language_afrikaans">isiBhunu</string>
+    <string name="language_zulu">isiZulu</string>
+
+</resources>

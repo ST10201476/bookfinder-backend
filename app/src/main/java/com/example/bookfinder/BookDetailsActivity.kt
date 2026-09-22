@@ -48,40 +48,36 @@ class BookDetailsActivity : AppCompatActivity() {
         saveStatusText = findViewById(R.id.saveStatusText)
 
         currentBookId = intent.getStringExtra("bookId")
-        currentTitle = intent.getStringExtra("title") ?: "Unknown title"
-        currentAuthor = intent.getStringExtra("author") ?: "Unknown author"
+        currentTitle = intent.getStringExtra("title")
+            ?: getString(R.string.unknown_title)          // ← CHANGE 1
+        currentAuthor = intent.getStringExtra("author")
+            ?: getString(R.string.unknown_author)         // ← CHANGE 2
 
         bookTitle.text = currentTitle
-
         bookAuthor.text = currentAuthor
 
-        bookPublisher.text =
-            "Publisher: " +
-                    (intent.getStringExtra("publisher")
-                        ?: "Unknown publisher")
+        bookPublisher.text = getString(R.string.publisher_label,   // ← CHANGE 3
+            intent.getStringExtra("publisher")
+                ?: getString(R.string.unknown_publisher))
 
-        bookDate.text =
-            "Published: " +
-                    (intent.getStringExtra("date")
-                        ?: "Unknown date")
+        bookDate.text = getString(R.string.published_label,        // ← CHANGE 4
+            intent.getStringExtra("date")
+                ?: getString(R.string.unknown_date))
 
-        bookPages.text =
-            "Pages: " +
-                    (intent.getIntExtra("pages", 0)
-                        .takeIf { it > 0 } ?: "Unknown")
+        bookPages.text = getString(R.string.pages_label,           // ← CHANGE 5
+            intent.getIntExtra("pages", 0)
+                .takeIf { it > 0 }?.toString()
+                ?: getString(R.string.unknown_pages))
 
-        bookRating.text =
-            "Rating: " +
-                    (intent.getDoubleExtra("rating", 0.0)
-                        .takeIf { it > 0 } ?: "Not available")
+        bookRating.text = getString(R.string.rating_label,         // ← CHANGE 6
+            intent.getDoubleExtra("rating", 0.0)
+                .takeIf { it > 0 }?.toString()
+                ?: getString(R.string.rating_unavailable))
 
-        bookDescription.text =
-            intent.getStringExtra("description")
-                ?: "No description available."
+        bookDescription.text = intent.getStringExtra("description")
+            ?: getString(R.string.no_description)                  // ← CHANGE 7
 
-        val imageUrl =
-            intent.getStringExtra("imageUrl")
-
+        val imageUrl = intent.getStringExtra("imageUrl")
         bookCover.load(imageUrl)
 
         saveBookButton.setOnClickListener {
@@ -93,12 +89,12 @@ class BookDetailsActivity : AppCompatActivity() {
         val userId = FirebaseAuth.getInstance().currentUser?.uid
 
         if (userId == null) {
-            Toast.makeText(this, "You must be logged in to save books", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, getString(R.string.must_be_logged_in), Toast.LENGTH_SHORT).show()  // ← CHANGE 8
             return
         }
 
         if (currentBookId == null) {
-            Toast.makeText(this, "Could not identify this book", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, getString(R.string.could_not_identify_book), Toast.LENGTH_SHORT).show()  // ← CHANGE 9
             return
         }
 
@@ -110,18 +106,18 @@ class BookDetailsActivity : AppCompatActivity() {
                     SaveBookRequest(
                         userId = userId,
                         bookId = currentBookId!!,
-                        title = currentTitle ?: "Unknown title",
+                        title = currentTitle ?: getString(R.string.unknown_title),  // ← CHANGE 10
                         author = currentAuthor
                     )
                 )
 
                 if (response.isSuccessful) {
-                    saveStatusText.text = "Book saved to your list!"
+                    saveStatusText.text = getString(R.string.book_saved)  // ← CHANGE 11
                     saveStatusText.visibility = View.VISIBLE
                 } else {
                     Toast.makeText(
                         this@BookDetailsActivity,
-                        "Failed to save book",
+                        getString(R.string.save_failed),                  // ← CHANGE 12
                         Toast.LENGTH_SHORT
                     ).show()
                 }

@@ -1,3 +1,44 @@
 <resources>
     <string name="app_name">BookFinder</string>
+
+    <!-- Auth -->
+    <string name="login_title">Login</string>
+    <string name="register_title">Register</string>
+    <string name="email_hint">Email</string>
+    <string name="password_hint">Password</string>
+    <string name="login_button">Login</string>
+    <string name="register_button">Register</string>
+
+    <!-- Search -->
+    <string name="search_hint">Search books…</string>
+    <string name="search_button">Search</string>
+
+    <!-- Book details -->
+    <string name="save_book">Save Book</string>
+    <string name="publisher_label">Publisher: %1$s</string>
+    <string name="published_label">Published: %1$s</string>
+    <string name="pages_label">Pages: %1$s</string>
+    <string name="rating_label">Rating: %1$s</string>
+    <string name="unknown_title">Unknown title</string>
+    <string name="unknown_author">Unknown author</string>
+    <string name="unknown_publisher">Unknown publisher</string>
+    <string name="unknown_date">Unknown date</string>
+    <string name="unknown_pages">Unknown</string>
+    <string name="rating_unavailable">Not available</string>
+    <string name="no_description">No description available.</string>
+    <string name="book_saved">Book saved to your list!</string>
+    <string name="save_failed">Failed to save book</string>
+    <string name="must_be_logged_in">You must be logged in to save books</string>
+    <string name="could_not_identify_book">Could not identify this book</string>
+
+    <!-- Settings -->
+    <string name="settings_title">Settings</string>
+    <string name="dark_mode">Dark mode</string>
+    <string name="language">Language</string>
+    <string name="logout">Logout</string>
+    <string name="account_info">Account info</string>
+    <string name="language_english">English</string>
+    <string name="language_afrikaans">Afrikaans</string>
+    <string name="language_zulu">isiZulu</string>
+
 </resources>
